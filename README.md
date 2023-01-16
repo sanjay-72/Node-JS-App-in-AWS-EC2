@@ -54,7 +54,7 @@ git clone https://github.com/sanjay-72/Node-JS-App-in-AWS-EC2
 Get inside the directory and Install all the required Packages
 
 ```bash
-cd 
+cd Node-JS-App-in-AWS-EC2
 npm install
 ```
 
@@ -64,3 +64,7 @@ To start the application, run the below command in the terminal:
 ```bash
 npm start
 ```
+
+But even after doing all these things your server get closed when you close your current session.
+<br>
+If you need to run it 24*7 you need to install pm2 and run the app using it.
