@@ -5,7 +5,11 @@ This repository gives a quick glance about launching Node JS app in AWS EC2
 
 This is a great start for simple deployments in AWS EC2.
 
-Before going to step - 1 make sure your instance is running perfectly fine and you have connected to it using PuTTY or EC2 Instance Connect or Any other SSH.
+Before going to step - 1 make sure your instance is running perfectly fine and you have connected to it using PuTTY or EC2 Instance Connect or any other SSH.
+
+If you are planning to run the app in any particular port you should set all the security group in-bound settings in such a way that it allows traffic to that particular port from anywhere. Or else if you are planning to run the app on Port: 80 you can just simply allow all the https and http traffic to your instance under network settings while launching that instance.
+
+For simplicity I've choosen Amazon Linux for the instance and I've proceeded with Port: 80.
 ## Step 1: Install NodeJS and NPM using nvm
 
 Install node version manager (nvm) by typing the following at the command line.
