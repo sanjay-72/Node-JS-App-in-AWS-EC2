@@ -5,7 +5,9 @@ This repository gives a quick glance about launching Node JS app in AWS EC2
 
 This is a great start for simple deployments in AWS EC2.
 
+Before going to step - 1 make sure your instance is running perfectly fine and you have connected to it using PuTTY or EC2 Instance Connect or Any other SSH.
 ## Step 1: Install NodeJS and NPM using nvm
+
 Install node version manager (nvm) by typing the following at the command line.
 
 ```bash
@@ -62,9 +64,15 @@ Start the application
 To start the application, run the below command in the terminal:
 
 ```bash
-npm start
+node app.js
 ```
 
 But even after doing all these things your server get closed when you close your current session.
 <br>
 If you need to run it 24*7 you need to install pm2 and run the app using it.
+
+```bash
+npm install pm2
+pm2 start app.js
+```
+
