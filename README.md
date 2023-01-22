@@ -6,10 +6,15 @@ This repository gives a quick glance about launching Node JS apps in AWS EC2
 This is a great start for simple deployments in AWS EC2. The app I built is very simple and it generates the quotes with their author name randomly on every visit. The total count of quotes are around 102.
 
 ## Let's start with creating an instance.
-Navigate to EC2 section under Services -> Compute. And then select Launch instance.
+Navigate to EC2 section under Services -> Compute -> EC2 or You can directly search for EC2.
 
 
 ![image](https://user-images.githubusercontent.com/94333583/213897342-019c7d4c-94dc-45ed-9a7f-1327cabbde6b.png)
+
+Then click on Launch instance.
+
+![image](https://user-images.githubusercontent.com/94333583/213901715-3d06cf57-2876-484e-968c-8c9a448ea0b6.png)
+
 
 ## My instance configuration settings.
 
@@ -26,6 +31,8 @@ I've selected t2.micro as it is free tier eligible. I already have some key pair
 Here I'm just giving a simple name and leaving the remaining settings as default. If we are using puTTY for connection we can change to different settings but here I'll show you some other easy way. So, we don't need to change anything else here.
 
 ![image](https://user-images.githubusercontent.com/94333583/213897772-88f49ad5-5dac-4f67-bfe5-76261b9a6139.png)
+
+### Save the key pairs safely in your local desktop. 🛑🛑🛑Never let them go public.
 
 ## Network settings and launching instance
 
@@ -94,7 +101,7 @@ yum install git -y
 
 Just to verify if system has git installed or not, please run below command in terminal:
 ```bash
-git — version
+git -v
 ```
 
 This command will print the git version in the terminal.
@@ -120,18 +127,20 @@ To start the application, run the below command in the terminal:
 node app.js
 ```
 
-But even after doing all these things your server get closed when you close your current session.
+But even after doing all these things your server get closed when you close your current session. So we need to use pm2 for running it continuously.
+Before proceeding you should end node server with shortcut <strong>Ctrl+C</strong>
 <br>
 ## Step 4:Running the app 24X7
 If you need to run it 24*7 you need to install pm2 and run the app using it.
 
 ```bash
-npm install pm2
+npm install pm2 -g
 ```
 ```bash
 pm2 startup
 pm2 save
 pm2 start app.js
+pm2 save
 ```
 
 # Some useful pm2 commands
