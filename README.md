@@ -42,8 +42,10 @@ Before going to step - 1 make sure your instance is running perfectly fine and y
 
 If you are planning to run the app on some other port follow the next step.
 
+### <a href = "https://github.com/sanjay-72/Node-JS-App-in-AWS-EC2/blob/main/DeploymentInOtherPort/Process.md" target = "_blank">Additional settings for running app on other port.(PORT:3000) is considered in this example</a>
 
 After doing all these things save the settings.
+
 ## Go to instance page and click connect over there.
 
 ![image](https://user-images.githubusercontent.com/94333583/213899134-81d8d092-e415-46ff-9b9e-8cb5b836eb9d.png)
@@ -97,6 +99,7 @@ git — version
 
 This command will print the git version in the terminal.
 
+## Step 3: Cloning the code from repository and running it.
 Run below command to clone the code repository from Github:
 
 ```bash
@@ -119,16 +122,33 @@ node app.js
 
 But even after doing all these things your server get closed when you close your current session.
 <br>
+## Step 4:Running the app 24X7
 If you need to run it 24*7 you need to install pm2 and run the app using it.
 
 ```bash
 npm install pm2
+```
+```bash
+pm2 startup
+pm2 save
 pm2 start app.js
 ```
 
-#Checking your app on cloud.
+# Some useful pm2 commands
+```bash
+pm2 list
+pm2 logs
+pm2 monit
+pm2 restart app_name
+pm2 reload app_name
+pm2 stop app_name
+pm2 delete app_name
+```
+
+# Checking your app on cloud.
 
 ![image](https://user-images.githubusercontent.com/94333583/213899423-0a77a39e-9ba4-4253-a402-dc7611fb0c65.png)
 
-If you are using any other port you can just add :PORT at the end of the link.
+If you are using any other port you can just add ":PORT" at the end of the link.
+
 *PORT refers to your port number.
